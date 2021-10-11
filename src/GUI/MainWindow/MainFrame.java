@@ -1,21 +1,22 @@
-package MainWindow;
+package GUI.MainWindow;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class MainFrame extends JFrame {
+    public static MainFrame mainFrame;
 
-    SignUpButton signUpButton;
-    SignInButton signInButton;
+    SignUpButtonLink signUpButton;
+    SignInButtonLink signInButton;
 
     public MainFrame () {
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setSize(500, 500);
         this.setLayout(new FlowLayout());
         this.setTitle("Accounts");
 
-        signUpButton = new SignUpButton();
-        signInButton = new SignInButton();
+        signUpButton = new SignUpButtonLink();
+        signInButton = new SignInButtonLink();
 
         this.add(signUpButton);
         this.add(signInButton);

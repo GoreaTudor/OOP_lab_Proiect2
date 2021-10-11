@@ -1,18 +1,21 @@
 package Data;
 
-import java.util.ArrayList;
-
-public class Account <T> {
-    static ArrayList <Account> accounts = new ArrayList<>();
-
+public class Account {
+    private String secret;
     private String username;
     private String password;
-    private T otherData;
 
-    public Account (String username, String password, T otherData) {
+    public Account (String username, String password, String secret) {
         this.username = username;
         this.password = password;
-        this.otherData = otherData;
+        this.secret = secret;
+    }
+
+    public String getSecret() {
+        return secret;
+    }
+    public void setSecret(String secret) {
+        this.secret = secret;
     }
 
     public String getUsername() {
@@ -27,12 +30,5 @@ public class Account <T> {
     }
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public T getOtherData() {
-        return otherData;
-    }
-    public void setOtherData(T otherData) {
-        this.otherData = otherData;
     }
 }
