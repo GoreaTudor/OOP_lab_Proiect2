@@ -12,6 +12,7 @@ public class SignUpButton extends JButton implements ActionListener {
     SignUpButton () {
         this.setText("Sign up");
         this.addActionListener(this);
+        this.setFocusable(false);
     }
 
     @Override

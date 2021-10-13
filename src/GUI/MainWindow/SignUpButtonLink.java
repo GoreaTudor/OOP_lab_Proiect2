@@ -12,6 +12,7 @@ public class SignUpButtonLink extends JButton implements ActionListener {
     SignUpButtonLink() {
         this.setText("Sign Up");
         this.addActionListener(this);
+        this.setFocusable(false);
     }
 
     @Override
