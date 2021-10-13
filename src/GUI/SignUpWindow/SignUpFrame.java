@@ -1,11 +1,21 @@
 package GUI.SignUpWindow;
 
+import GUI.LogWindow.LogFrame;
+import GUI.SignInWindow.SignInFrame;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class SignUpFrame extends JFrame {
+public class SignUpFrame extends JFrame implements ActionListener {
 
     public static SignUpFrame signUpFrame;
+
+    JMenuBar menuBar;
+    JMenu fileMenu;
+    JMenuItem backItem;
+    JMenuItem exitItem;
 
     JLabel frameLabel;
 
@@ -22,7 +32,6 @@ public class SignUpFrame extends JFrame {
     JTextField secretField;
 
     SignUpButton signUpButton;
-    BackButton backButton;
 
     public SignUpFrame () {
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -31,6 +40,21 @@ public class SignUpFrame extends JFrame {
         this.setTitle("Sign up");
 
 
+        ///// MENU BAR /////
+        menuBar = new JMenuBar();
+        fileMenu = new JMenu("File");
+
+        backItem = new JMenuItem("Back");
+        backItem.addActionListener(this);
+        exitItem = new JMenuItem("Exit");
+        exitItem.addActionListener(this);
+
+        fileMenu.add(backItem);
+        fileMenu.add(exitItem);
+        menuBar.add(fileMenu);
+
+
+        ///// FRAME /////
         frameLabel = new JLabel("Introduce name, username and password");
         frameLabel.setFont(new Font("Consolas", Font.BOLD, 15));
 
@@ -50,9 +74,9 @@ public class SignUpFrame extends JFrame {
         secretField = new JTextField();
 
         signUpButton = new SignUpButton();
-        backButton = new BackButton();
 
 
+        this.setJMenuBar(menuBar);
         this.add(frameLabel);
         this.add(usernameLabel);
         this.add(usernameField);
@@ -63,10 +87,20 @@ public class SignUpFrame extends JFrame {
         this.add(secretLabel);
         this.add(secretField);
         this.add(signUpButton);
-        this.add(backButton);
 
 
         this.pack();
         this.setVisible(true);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == backItem) {
+            SignUpFrame.signUpFrame.dispose();
+            LogFrame.logFrame = new LogFrame();
+
+        } else if (e.getSource() == exitItem){
+            System.exit(0);
+        }
     }
 }
