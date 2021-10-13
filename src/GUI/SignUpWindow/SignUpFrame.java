@@ -15,15 +15,19 @@ public class SignUpFrame extends JFrame {
     JLabel passwordLabel;
     JPasswordField passwordField;
 
+    JLabel typeLabel;
+    JComboBox <String> typeSelect;
+
     JLabel secretLabel;
     JTextField secretField;
 
     SignUpButton signUpButton;
+    BackButton backButton;
 
     public SignUpFrame () {
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         //this.setSize(300, 300);
-        this.setLayout(new GridLayout(10, 1, 0, 20));
+        this.setLayout(new GridLayout(12, 2, 10, 20));
         this.setTitle("Sign up");
 
 
@@ -36,10 +40,17 @@ public class SignUpFrame extends JFrame {
         passwordLabel = new JLabel("Password: ");
         passwordField = new JPasswordField();
 
+        typeLabel = new JLabel("Select account type: ");
+        typeSelect = new JComboBox<>();
+        typeSelect.addItem("User");
+        typeSelect.addItem("Admin");
+        typeSelect.setSelectedIndex(0);
+
         secretLabel = new JLabel("Secret: ");
         secretField = new JTextField();
 
         signUpButton = new SignUpButton();
+        backButton = new BackButton();
 
 
         this.add(frameLabel);
@@ -47,9 +58,12 @@ public class SignUpFrame extends JFrame {
         this.add(usernameField);
         this.add(passwordLabel);
         this.add(passwordField);
+        this.add(typeLabel);
+        this.add(typeSelect);
         this.add(secretLabel);
         this.add(secretField);
         this.add(signUpButton);
+        this.add(backButton);
 
 
         this.pack();

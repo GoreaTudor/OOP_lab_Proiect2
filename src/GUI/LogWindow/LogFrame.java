@@ -1,15 +1,15 @@
-package GUI.MainWindow;
+package GUI.LogWindow;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class MainFrame extends JFrame {
-    public static MainFrame mainFrame;
+public class LogFrame extends JFrame {
+    public static LogFrame logFrame;
 
     SignUpButtonLink signUpButton;
     SignInButtonLink signInButton;
 
-    public MainFrame () {
+    public LogFrame() {
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setSize(500, 500);
         this.setLayout(new FlowLayout());
