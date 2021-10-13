@@ -1,6 +1,5 @@
-package GUI.MainWindow;
+package GUI.LogWindow;
 
-import MainPackage.Main;
 import GUI.SignUpWindow.SignUpFrame;
 
 import javax.swing.*;
@@ -18,6 +17,6 @@ public class SignUpButtonLink extends JButton implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         SignUpFrame.signUpFrame = new SignUpFrame();
-        MainFrame.mainFrame.dispose();
+        LogFrame.logFrame.dispose();
     }
 }

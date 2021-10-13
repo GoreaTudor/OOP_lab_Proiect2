@@ -1,9 +1,9 @@
 package MainPackage;
 
-import GUI.MainWindow.MainFrame;
+import GUI.LogWindow.LogFrame;
 
 public class Main {
     public static void main(String[] args) {
-        MainFrame.mainFrame = new MainFrame();
+        LogFrame.logFrame = new LogFrame();
     }
 }

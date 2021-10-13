@@ -1,7 +1,7 @@
 package GUI.SignInWindow;
 
 import Data.Account;
-import GUI.MainWindow.MainFrame;
+import GUI.LogWindow.LogFrame;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -42,7 +42,7 @@ class SignInButton extends JButton implements ActionListener {
                     JOptionPane.WARNING_MESSAGE);
 
             SignInFrame.signInFrame.dispose();
-            MainFrame.mainFrame = new MainFrame();
+            LogFrame.logFrame = new LogFrame();
         }
     }
 }

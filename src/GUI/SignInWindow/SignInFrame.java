@@ -16,11 +16,12 @@ public class SignInFrame extends JFrame {
     JPasswordField passwordField;
 
     SignInButton signInButton;
+    BackButton backButton;
 
     public SignInFrame () {
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         //this.setSize(400, 500);
-        this.setLayout(new GridLayout(10, 1, 0, 20));
+        this.setLayout(new GridLayout(8, 1, 0, 20));
         this.setTitle("Sign in");
 
 
@@ -34,6 +35,7 @@ public class SignInFrame extends JFrame {
         passwordField = new JPasswordField();
 
         signInButton = new SignInButton();
+        backButton = new BackButton();
 
 
         this.add(frameLabel);
@@ -42,6 +44,7 @@ public class SignInFrame extends JFrame {
         this.add(passwordLabel);
         this.add(passwordField);
         this.add(signInButton);
+        this.add(backButton);
 
 
         this.pack();

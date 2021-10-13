@@ -5,15 +5,19 @@ import java.util.ArrayList;
 public class Account {
 
     public static ArrayList <Account> accounts = new ArrayList<>();
+    public static final int USER = 0;
+    public static final int ADMIN = 1;
 
     private String secret;
     private String username;
     private String password;
+    private int type;
 
-    public Account (String username, String password, String secret) {
+    public Account (String username, String password, String secret, int type) {
         this.username = username;
         this.password = password;
         this.secret = secret;
+        this.type = type;
     }
 
     public static Account usernameExists(String username){
@@ -44,5 +48,9 @@ public class Account {
     }
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public int getType() {
+        return type;
     }
 }

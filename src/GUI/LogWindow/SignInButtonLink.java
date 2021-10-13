@@ -1,6 +1,5 @@
-package GUI.MainWindow;
+package GUI.LogWindow;
 
-import MainPackage.Main;
 import GUI.SignInWindow.SignInFrame;
 
 import javax.swing.*;
@@ -18,6 +17,6 @@ public class SignInButtonLink extends JButton implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         SignInFrame.signInFrame = new SignInFrame();
-        MainFrame.mainFrame.dispose();
+        LogFrame.logFrame.dispose();
     }
 }

@@ -1,13 +1,13 @@
 package GUI.SignUpWindow;
 
 import Data.Account;
-import GUI.MainWindow.MainFrame;
+import GUI.LogWindow.LogFrame;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class SignUpButton extends JButton implements ActionListener {
+class SignUpButton extends JButton implements ActionListener {
 
     SignUpButton () {
         this.setText("Sign up");
@@ -25,6 +25,7 @@ public class SignUpButton extends JButton implements ActionListener {
         String username = SignUpFrame.signUpFrame.usernameField.getText();
         String password = String.valueOf(SignUpFrame.signUpFrame.passwordField.getPassword());
         String secret = SignUpFrame.signUpFrame.secretField.getText();
+        int type = SignUpFrame.signUpFrame.typeSelect.getSelectedIndex();
 
 
         if (username.equals("")) {                                          // no username introduced
@@ -68,7 +69,7 @@ public class SignUpButton extends JButton implements ActionListener {
                     JOptionPane.ERROR_MESSAGE);
 
         } else {
-            Account.accounts.add(new Account(username, password, secret));
+            Account.accounts.add(new Account(username, password, secret, type));
             SignUpFrame.signUpFrame.dispose();
 
             JOptionPane.showMessageDialog(null,
@@ -76,7 +77,7 @@ public class SignUpButton extends JButton implements ActionListener {
                     "Account creation successful",
                     JOptionPane.INFORMATION_MESSAGE);
 
-            MainFrame.mainFrame = new MainFrame();
+            LogFrame.logFrame = new LogFrame();
         }
 
 
