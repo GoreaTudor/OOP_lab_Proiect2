@@ -1,7 +1,9 @@
 package GUI.SignInWindow;
 
 import Data.Account;
+import GUI.AdminWindow.AdminFrame;
 import GUI.LogWindow.LogFrame;
+import GUI.UserWindow.UserFrame;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -36,13 +38,15 @@ class SignInButton extends JButton implements ActionListener {
                     JOptionPane.ERROR_MESSAGE);
 
         } else {
-            JOptionPane.showMessageDialog(null,
-                    account.getSecret(),
-                    "Your secret is:",
-                    JOptionPane.WARNING_MESSAGE);
-
             SignInFrame.signInFrame.dispose();
-            LogFrame.logFrame = new LogFrame();
+
+            if (account.getAccountType() == 1) { // Admin window
+                AdminFrame.adminFrame = new AdminFrame();
+
+            } else { // User Window
+                UserFrame.userFrame = new UserFrame();
+
+            }
         }
     }
 }

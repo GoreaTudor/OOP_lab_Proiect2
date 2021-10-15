@@ -25,7 +25,7 @@ class SignUpButton extends JButton implements ActionListener {
         String username = SignUpFrame.signUpFrame.usernameField.getText();
         String password = String.valueOf(SignUpFrame.signUpFrame.passwordField.getPassword());
         String secret = SignUpFrame.signUpFrame.secretField.getText();
-        int type = SignUpFrame.signUpFrame.typeSelect.getSelectedIndex();
+        int accountType = SignUpFrame.signUpFrame.typeSelect.getSelectedIndex();
 
 
         if (username.equals("")) {                                          // no username introduced
@@ -69,7 +69,7 @@ class SignUpButton extends JButton implements ActionListener {
                     JOptionPane.ERROR_MESSAGE);
 
         } else {
-            Account.accounts.add(new Account(username, password, secret, type));
+            Account.accounts.add(new Account(username, password, secret, accountType));
             SignUpFrame.signUpFrame.dispose();
 
             JOptionPane.showMessageDialog(null,
