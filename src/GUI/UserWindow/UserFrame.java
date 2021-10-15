@@ -1,16 +1,16 @@
-package GUI.AdminWindow;
+package GUI.UserWindow;
 
 import javax.swing.*;
 
-public class AdminFrame extends JFrame {
+public class UserFrame extends JFrame {
 
-    public static AdminFrame adminFrame;
+    public static UserFrame userFrame;
 
-    public AdminFrame () {
+    public UserFrame () {
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setSize(300, 300);
         this.setLayout(null);
-        this.setTitle("Admin");
+        this.setTitle("User");
 
         ;
 

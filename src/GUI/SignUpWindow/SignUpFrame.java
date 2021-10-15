@@ -36,7 +36,7 @@ public class SignUpFrame extends JFrame implements ActionListener {
     public SignUpFrame () {
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         //this.setSize(300, 300);
-        this.setLayout(new GridLayout(12, 2, 10, 20));
+        this.setLayout(new GridLayout(11, 2, 10, 20));
         this.setTitle("Sign up");
 
 
