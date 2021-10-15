@@ -40,7 +40,7 @@ class SignUpButton extends JButton implements ActionListener {
                     "Account creation failure",
                     JOptionPane.ERROR_MESSAGE);
 
-        } else if (Account.usernameExists(username) != null) {              // the account already exists
+        } else if (Account.usernameExists(username) != null) {              // the username already exists
             JOptionPane.showMessageDialog(null,
                     "The selected username already exists!",
                     "Account creation failure",
@@ -54,9 +54,9 @@ class SignUpButton extends JButton implements ActionListener {
                     "Account creation failure",
                     JOptionPane.ERROR_MESSAGE);
 
-        } else if (password.length() < 8 || password.length() > 32) {           // invalid password
+        } else if (password.length() < 5 || password.length() > 32) {       // invalid password
             JOptionPane.showMessageDialog(null,
-                    "The password must be  between 8 and 32 characters!",
+                    "The password must be  between 5 and 32 characters!",
                     "Account creation failure",
                     JOptionPane.ERROR_MESSAGE);
 
