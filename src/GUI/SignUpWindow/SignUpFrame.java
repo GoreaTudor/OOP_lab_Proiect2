@@ -56,12 +56,17 @@ public class SignUpFrame extends JFrame implements ActionListener {
 
         ///// FRAME /////
         frameLabel = new JLabel("Introduce name, username and password");
-        frameLabel.setFont(new Font("Consolas", Font.BOLD, 15));
+        frameLabel.setFont(new Font("Arial", Font.BOLD, 20));
+        frameLabel.setPreferredSize(new Dimension(450, 30));
+        frameLabel.setVerticalAlignment(JLabel.CENTER);
+        frameLabel.setHorizontalAlignment(JLabel.CENTER);
 
         usernameLabel = new JLabel("Username: ");
+        usernameLabel.setVerticalAlignment(JLabel.BOTTOM);
         usernameField = new JTextField();
 
         passwordLabel = new JLabel("Password: ");
+        passwordLabel.setVerticalAlignment(JLabel.BOTTOM);
         passwordField = new JPasswordField();
 
         typeLabel = new JLabel("Select account type: ");
@@ -69,8 +74,10 @@ public class SignUpFrame extends JFrame implements ActionListener {
         typeSelect.addItem("User");
         typeSelect.addItem("Admin");
         typeSelect.setSelectedIndex(0);
+        typeSelect.addActionListener(this);
 
         secretLabel = new JLabel("Secret: ");
+        secretLabel.setVerticalAlignment(JLabel.BOTTOM);
         secretField = new JTextField();
 
         signUpButton = new SignUpButton();
@@ -101,6 +108,17 @@ public class SignUpFrame extends JFrame implements ActionListener {
 
         } else if (e.getSource() == exitItem){
             System.exit(0);
+
+        } else if (e.getSource() == typeSelect) {
+            if (typeSelect.getSelectedIndex() == 1) { // No secret for admin
+                secretLabel.setVisible(false);
+                secretField.setVisible(false);
+
+            } else {
+                secretLabel.setVisible(true);
+                secretField.setVisible(true);
+            }
+
         }
     }
 }

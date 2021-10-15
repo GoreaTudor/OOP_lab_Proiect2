@@ -49,12 +49,17 @@ public class SignInFrame extends JFrame implements ActionListener {
 
         ///// FRAME /////
         frameLabel = new JLabel("Introduce the username and password");
-        frameLabel.setFont(new Font("Consolas", Font.BOLD, 15));
+        frameLabel.setFont(new Font("Arial", Font.BOLD, 20));
+        frameLabel.setPreferredSize(new Dimension(400, 30));
+        frameLabel.setVerticalAlignment(JLabel.CENTER);
+        frameLabel.setHorizontalAlignment(JLabel.CENTER);
 
         usernameLabel = new JLabel("Username: ");
+        usernameLabel.setVerticalAlignment(JLabel.BOTTOM);
         usernameField = new JTextField();
 
         passwordLabel = new JLabel("Password: ");
+        passwordLabel.setVerticalAlignment(JLabel.BOTTOM);
         passwordField = new JPasswordField();
 
         signInButton = new SignInButton();

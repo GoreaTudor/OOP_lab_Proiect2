@@ -28,7 +28,7 @@ public class UserFrame extends JFrame implements ActionListener {
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setSize(400, 400);
         this.setLayout(new FlowLayout());
-        this.setTitle("User");
+        this.setTitle(account.getUsername());
         this.account = account;
 
 
