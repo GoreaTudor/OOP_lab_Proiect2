@@ -1,4 +1,4 @@
-## Secrets Keeper
+### Secrets Keeper
 
 This project is an exercise for me to learn how to implement accounts (sign in, sign out, sign up).
 
