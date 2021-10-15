@@ -41,7 +41,7 @@ class SignInButton extends JButton implements ActionListener {
             SignInFrame.signInFrame.dispose();
 
             if (account.getAccountType() == 1) { // Admin window
-                AdminFrame.adminFrame = new AdminFrame();
+                AdminFrame.adminFrame = new AdminFrame(account);
 
             } else { // User Window
                 UserFrame.userFrame = new UserFrame(account);

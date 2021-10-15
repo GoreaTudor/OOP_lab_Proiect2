@@ -62,7 +62,7 @@ class SignUpButton extends JButton implements ActionListener {
 
 
 
-        } else if (secret.equals("")) {                                     // no secret introduced
+        } else if (secret.equals("") && accountType == 0) {                 // no secret introduced for User
             JOptionPane.showMessageDialog(null,
                     "No secret introduced, nothing to save!",
                     "Account creation failure",
