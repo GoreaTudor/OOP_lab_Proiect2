@@ -2,11 +2,9 @@ package Data;
 
 import java.util.ArrayList;
 
-public class Account {
+public class Account implements IAccount{
 
     public static ArrayList <Account> accounts = new ArrayList<>();
-    public static final int USER = 0;
-    public static final int ADMIN = 1;
 
     private String secret;
     private String username;
@@ -29,27 +27,34 @@ public class Account {
         return null;
     }
 
+    @Override
     public String getSecret() {
         return secret;
     }
+    @Override
     public void setSecret(String secret) {
         this.secret = secret;
     }
 
+    @Override
     public String getUsername() {
         return username;
     }
+    @Override
     public void setUsername(String username) {
         this.username = username;
     }
 
+    @Override
     public String getPassword() {
         return password;
     }
+    @Override
     public void setPassword(String password) {
         this.password = password;
     }
 
+    @Override
     public int getAccountType() {
         return accountType;
     }
